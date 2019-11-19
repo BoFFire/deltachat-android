@@ -528,4 +528,18 @@ public class ApplicationDcContext extends DcContext {
     return 0;
   }
 
+  public void addWelcomeDeviceMessages() {
+    // create the device-chat by adding a message to it
+    DcMsg msg = new DcMsg(this, DcMsg.DC_MSG_TEXT);
+    msg.setText("These messages in this chat are generated locally by the Delta Chat app.\n\n"
+            + "Delta Chat does not have your e-mail-Address or other data.");
+    if (addDeviceMsg("about-device-messages", msg)!=0) {
+      // also create the saved-messages chat, but only once
+      createChatByContactId(DcContact.DC_CONTACT_ID_SELF);
+    }
+
+    msg = new DcMsg(this, DcMsg.DC_MSG_TEXT);
+    msg.setText("Welcome to Delta Chat!");
+    addDeviceMsg("welcome", msg);
+  }
 }

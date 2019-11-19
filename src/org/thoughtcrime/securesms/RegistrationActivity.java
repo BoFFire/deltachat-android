@@ -7,6 +7,9 @@ import android.os.Bundle;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.Group;
+
+import com.b44t.messenger.DcContact;
+import com.b44t.messenger.DcMsg;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import androidx.appcompat.app.ActionBar;
